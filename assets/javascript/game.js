@@ -26,26 +26,9 @@ var letterArray = [
   "y",
   "z"
 ];
-// var userGuess = document.getElementById("youGuesses");
-// var win = document.getElementById("win");
-// var loss = document.getElementById("loss");
-// var guessesLeft = document.getElementById("guessesLeft");
-// var yourGuesses = document.getElementById("yourGuesses");
-var userWin = 0;
-var userLoss = 0;
-var userGuesses = "";
+var computerGuess = letterArray[Math.floor(Math.random() * 26)];
 
 document.onkeyup = function(event) {
-  var computerGuess = letterArray[Math.floor(Math.random() * 26)];
-  var letterGuessed = event.key.toLowerCase();
-
-  if (computerGuess === letterGuessed) {
-    userWin++;
-    console.log("Win: " + userWin);
-    console.log("Loss: " + userLoss);
-  } else {
-    userLoss++;
-    console.log("Loss: " + userLoss);
-    console.log("Win: " + userWin);
-  }
+  var userGuess = event.key.toLowerCase();
+  var numberOfGuesses = 0;
 };

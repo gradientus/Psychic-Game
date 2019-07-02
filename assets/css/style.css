@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Pathway+Gothic+One&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script&display=swap");
 
 body {
   font-family: "Pathway Gothic One", sans-serif;
@@ -31,7 +32,8 @@ h2 {
 h3 {
   font-size: 1.2rem;
   line-height: 1.5;
-  text-align: center;
+  margin-top: 2rem;
+  margin-left: 1rem;
 }
 
 main {
@@ -46,11 +48,20 @@ img {
   width: 100%;
 }
 
-.guessText {
+.guessText div {
   margin: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1;
+}
+.userGuesses span {
+  font-style: italic;
+  color: #888;
 }
 
-footer {
+footer h2 {
   margin-top: 1rem;
+  margin-bottom: 1rem;
   text-align: center;
+  text-transform: none;
+  font-family: "Dancing Script", cursive;
 }
