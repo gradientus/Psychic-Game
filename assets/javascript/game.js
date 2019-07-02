@@ -41,23 +41,26 @@ document.onkeyup = function(event) {
   console.log("computer:" + computerGuess);
   console.log("user:" + userGuess);
 
+  //what to do when the user wins: increment wins, reset maxguesses to 9, clear previous guesses
   if (userGuess === computerGuess && maxGuesses > 1) {
     wins++;
     maxGuesses = 9;
     winText.textContent = "Wins: " + wins;
     guessesLeftText.textContent = "Guesses Left: " + maxGuesses;
-    userGuessesText.textContent = "Your Guesses So Far:"; //shouldn't this clear the append?
+    userGuessesText.textContent = "Your Guesses So Far:";
+
+    //what do do when the user loses:  increment losses after 9 attempts, resent maxguesses to 9, clear previous guesses
   } else if (userGuess !== computerGuess && maxGuesses === 1) {
     losses++;
     maxGuesses = 9;
     lossText.textContent = "Losses: " + losses;
     guessesLeftText.textContent = "Guesses Left: " + maxGuesses;
-    userGuessesText.textContent = "Your Guesses So Far:"; //shouldn't this clear the append?
+    userGuessesText.textContent = "Your Guesses So Far:";
+
+    //what to do when the user guesses incorrectly but hasn't reached 9 attempts, tell them what they guessed so far
   } else {
     maxGuesses--;
     guessesLeftText.textContent = "Guesses Left: " + maxGuesses;
     userGuessesText.append(userGuess);
   }
 };
-
-//everything working but the guesses so far.  How do I clear that after a win or loss?
