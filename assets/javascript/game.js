@@ -38,11 +38,9 @@ var maxGuesses = 9;
 //this grabs the users key input
 document.onkeyup = function(event) {
   var userGuess = event.key.toLowerCase(); //set keypress to userGuess
-  console.log("computer:" + computerGuess);
-  console.log("user:" + userGuess);
 
   //what to do when the user wins: increment wins, reset maxguesses to 9, clear previous guesses
-  if (userGuess === computerGuess && maxGuesses > 1) {
+  if (userGuess === computerGuess && maxGuesses > 0) {
     wins++;
     maxGuesses = 9;
     winText.textContent = "Wins: " + wins;
@@ -50,7 +48,7 @@ document.onkeyup = function(event) {
     userGuessesText.textContent = "Your Guesses So Far:";
 
     //what do do when the user loses:  increment losses after 9 attempts, resent maxguesses to 9, clear previous guesses
-  } else if (userGuess !== computerGuess && maxGuesses === 1) {
+  } else if (userGuess !== computerGuess && maxGuesses === 0) {
     losses++;
     maxGuesses = 9;
     lossText.textContent = "Losses: " + losses;
